@@ -1,0 +1,185 @@
+
+
+<html lang="en" xmlns:color="http://www.w3.org/1999/xhtml">
+{% load static %}
+<title>Core_dumped</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a class="w3-bar-item w3-padding-large w3-purple">Core_dumped</a>
+
+  </div>
+
+  <!-- Navbar on small screens -->
+
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-red w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">RAKATHON 2021</h1>
+  <p class="w3-xlarge">Credit Card Fraud detection and prevention system</p>
+  <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Demo Video</button>
+</header>
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+
+      <h1>Financial Technology</h1>
+
+
+      <h5><p> The advent of technology, in the form of credit card, brought in
+convenience and made life simpler for us, but along with it came the
+Pandora’s Box. While credit cards have made life easy for us, they
+have also managed to make life easy for the crooks. While enabling
+us to purchase things we fancy whilst seated on our couch, it has
+on the other hand made it easy for fraudsters to guzzle away money
+that is not truly theirs.
+      </p></h5>
+      <br>
+      <h3><p color:="red">
+        The main aim for our system will be to analyse the past transaction
+details of the customers and extract the behavioural patterns
+depending on which cardholders are clustered into different groups
+based on their transaction information.
+      </p>
+      </h3>
+
+
+
+
+  </div>
+</div>
+
+<!-- Second Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+  <div class="w3-content">
+
+
+
+  <div class="row">
+    <div class="column">
+      <div class="card">
+        <div class="card-image">
+          <img src="{% static 'img/23.png' %}">
+          <h2><span class="card-title">Machine learning model for credit card fraud detection</span></h2>
+        </div>
+        <div class="card-content">
+          <p>Machine learning is a field that machines learn concepts using data,
+using statistical analysis to predict and classify and input data as an
+output value.
+The proposed model consists of data pre-processing, sampling, feature
+selection, application of classification, and clustering algorithm based
+on machine learning. In this system, the validation step is performed for
+each step to verify the effectiveness of proposed financial fraud
+detection model.</p>
+        </div>
+
+        <div class="card-action">
+          <a href="{% url 'ml_card' %}">This is a link</a>
+        </div>
+
+
+      </div>
+    </div>
+    <br>
+    <div class="column">
+      <div class="card">
+        <div class="card-image">
+          <img src="{% static 'img/prev.png' %}">
+          <h2> <span class="card-title">Credit card fraud prevention</span></h2>
+        </div>
+        <div class="card-content">
+          <p>2-layer authentication
+                This extra layer of authentication actually prevents the misuse of
+                credit card, especially through online transactions. The dual-factor
+                authentication process allows debit and credit card customers to
+                validate their identity without using data visible on the card. As a
+                result, banks and payment portals can check if the transaction is
+                genuine or counterfeit in nature.</p>
+            </div>
+        <div class="card-action">
+          <a href="{% url 'signup' %}">This is a link</a>
+        </div>
+      </div>
+        </div>
+
+<br>
+
+    <div class="column">
+      <div class="card">
+        <div class="card-image">
+          <img src="{% static 'img/22.png' %}">
+          <h2><span class="card-title">QR code and Cryptography</span></h2>
+        </div>
+        <div class="card-content">
+          <p>The solution allows a user to “time activate” their credit card before
+                making a purchase. While the credit card is not “activated”, it cannot be
+                used to make purchases, including non-present transactions. This gives
+                control back to the bank and the customers.A time stamp and location stamp of each “activation” is added to the
+                              blockchain for audit purposes.
+                If a user claims to have lost their credit card or mobile phone or both,
+                the time and location of each “activation” are available for forensics and
+        insurance.</p>
+        </div>
+
+        <div class="card-action">
+          <a href="{% url 'qr_code' %}">This is a link</a>
+        </div>
+
+
+      </div>
+    </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+</div>
+
+
+<!-- Footer -->
+
+<footer class="w3-container w3-padding-64 w3-center">
+
+{% include "detection/footer.html" %}
+
+</footer>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+</body>
+</html>

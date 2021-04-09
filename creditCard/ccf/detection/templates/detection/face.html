@@ -1,0 +1,54 @@
+
+{% extends 'detection/base.html' %}
+
+{% block content %}
+{% load static %}
+
+<style>
+    .row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+</style>
+
+
+<body>
+<h1 align="center">Face Validation</h1>
+<p align="center">
+
+
+<div class="row">
+    <div class="column">
+
+      <img  width="200" height="200" src="data:image/png;base64,{{image_reg}}" >
+        <h4>Registered image</h4>
+
+    </div>
+    <div  width="200" height="200" class="column">
+
+      <img src="data:image/png;base64,{{image_cap}}">
+          <h2>Captured image</h2>
+
+    </div>
+</div>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>{{greet}}</strong> {{info}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+</p>
+</body>
+
+{% endblock content %}
+
+
+
+
+
+

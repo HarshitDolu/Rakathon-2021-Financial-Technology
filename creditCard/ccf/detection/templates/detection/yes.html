@@ -1,0 +1,33 @@
+{% extends 'detection/base.html' %}
+
+{% block content %}
+<style>
+    body
+{
+  font-family: "Open Sans";
+}
+#wrapper
+{
+  border: 1px solid #888;
+  display: inline-block;
+  padding:20px;
+
+}
+</style>
+<div class="container" style="padding-top: 50px;">
+<div class="jumbotron text-center">
+      <div class="container">
+        <h1 class="jumbotron-heading">Transaction initiated</h1>
+        <hr>
+        <h5><p>Your card is activated for transaction.</p> </h5>
+
+          <h3>Block created which will be immutable</h3>
+
+          {{response}}
+
+      </div>
+</div>
+</div>
+
+
+{% endblock %}

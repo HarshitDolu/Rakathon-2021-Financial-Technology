@@ -1,0 +1,88 @@
+{% extends 'detection/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<style>
+    .row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+</style>
+
+
+<body>
+       <div class="container">
+
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>{{resp}}</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                        </button>
+                </div>
+
+                  {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>{{message}}</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                        </button>
+                </div>
+                {% endfor %}
+                  {% endif %}
+                </div>
+
+<h1 align="center">QR Cryptography</h1>
+
+<p align="center">
+
+
+<div class="row">
+    <div class="column">
+
+<img src="data:image/png;base64,{{QR}}">
+
+
+    </div>
+    <div class="column">
+
+        <table class="table">
+  <caption>User Card details</caption>
+  <thead>
+    <tr>
+
+      <th scope="col">Name</th>
+      <th scope="col">Credit card number</th>
+      <th scope="col">CVV</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+
+      <td>{{uname}}</td>
+      <td>{{cno}}</td>
+      <td>{{cvv}}</td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+
+    </div>
+</div>
+<p align="center">
+<a class="btn btn-primary" href="{% url 'activate' %}" role="button">SCAN QR-CODE</a>
+</p>
+</p>
+</body>
+
+
+
+{% endblock %}

@@ -1,0 +1,51 @@
+
+{% extends 'detection/base.html' %}
+{% block title %} {{ block.super }}{% endblock title %}
+
+{% block content %}
+<body>
+
+ {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>{{message}}</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                        </button>
+                </div>
+                {% endfor %}
+                  {% endif %}
+
+
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <h3 class="login-heading mb-4">Welcome back!</h3>
+            <form method="POST" action="">
+				{% csrf_token %}
+                <div class="form-label-group">
+                 <input type="text" name="username" id="username" placeholder="Username..." class="form-control">
+                  <label for="username">username</label>
+                </div>
+
+                <div class="form-label-group">
+                 <input type="password" name="password" id="password" placeholder="Password..." class="form-control" >
+                  <label for="password">Password</label>
+                </div>
+
+
+                <button class="btn btn-lg btn-warning btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Sign in</button>
+                <div class="text-center">
+                  <div class="d-flex justify-content-center links">
+						Don't have an account? <a href="{% url 'signup' %}" class="ml-2">Sign Up</a>
+					</div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+
+
+
+</body>
+{% endblock content %}

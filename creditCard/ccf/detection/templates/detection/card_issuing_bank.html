@@ -1,0 +1,303 @@
+{% extends 'detection/base.html' %}
+
+{% block content %}
+
+<style>
+
+html,body{
+
+  margin: 0;
+  padding: 0;
+}
+.graph-cont{
+  width: calc(100% - 40px);
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+h1,h2,h3{
+  text-align: center;
+  color: #34495e;
+}
+.bar{
+  height: 30px;
+  max-width: 800px;
+  margin: 0 auto 10px auto;
+  line-height: 30px;
+  font-size: 16px;
+  color: black;
+  padding: 0 0 0 10px;
+  position: relative;
+}
+.bar::before{
+  content: '';
+  width: 100%;
+  position: absolute;
+  left: 0;
+  height: 30px;
+  top: 0;
+  z-index: -2;
+  background: #ecf0f1;
+}
+.bar::after{
+  content: '';
+  background: #2ecc71;
+  height: 30px;
+  transition: 0.7s;
+  display: block;
+  width: 100%;
+  -webkit-animation: bar-before 1 1.8s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.bar1::after{
+  max-width: {{accuracy_log}}%;
+}
+.bar2::after{
+  max-width: {{accuracy_rf}}%;
+}
+.bar3::after{
+  max-width: {{accuracy_dt}}%;
+}
+.bar4::after{
+  max-width: {{acc_if}}%;
+}
+.bar5::after{
+  max-width: {{acc_nb}}%;
+}
+@-webkit-keyframes bar-before{
+  0%{
+    width: 0px;
+  }
+  100%{
+    width: 100%;
+  }
+}
+
+.how-cont{
+  width: calc(100% - 40px);
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+code {
+  padding: 5px;
+  background: #ecf0f1;
+  display: block;
+}
+pre{
+  padding: 0;
+  margin: 0;
+}
+
+</style>
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400' rel='stylesheet' type='text/css'>
+
+<div class="graph-cont">
+  <h1>Models used for Credit card Fraud detection</h1>
+  <div class="bar bar1">{{accuracy_log}}% using Logistic Regression</div>
+  <div class="bar bar2">{{accuracy_rf}}% using Random Forest</div>
+  <div class="bar bar3">{{accuracy_dt}}% using Decision Tree</div>
+  <div class="bar bar4">{{acc_if}}% using Isolation Forest</div>
+   <div class="bar bar5">{{acc_nb}}% using Naive Bayes</div>
+</div>
+
+<br>
+
+<style> @import url('https://fonts.googleapis.com/css?family=Luckiest+Guy');
+ @import url('https://fonts.googleapis.com/css?family=Montserrat:900');
+
+
+
+.box{
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  overflow: hidden;
+  top: 10px;
+
+}
+.graph{
+  width: 90%;
+  height: 90%;
+  position: absolute;
+  border-left: 2px solid #FF8484;
+  border-bottom: 2px solid #FF8484;
+  left: 5%;
+
+}
+.graph:after{
+
+  position: absolute;
+  text-align: left;
+  bottom: -25px;
+  margin: auto;
+  left: 0;
+  color: #BA6161;
+  right: 0;
+  content:'Valid Or Invalid';
+}
+.graph:before{
+  content: 'Productivity';
+  position: absolute;
+  bottom: 50%;
+  left:-64px;
+  color: #BA6161;
+  transform: rotate(-90deg);
+}
+.m{
+  height: {{result_log}}%;
+  width: calc(100% / 8);
+
+  background: #FF8484;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: up1 1s ease-in;
+}
+@keyframes up1{
+  0%{
+    height: 0;
+  }
+  100%{
+    height: 80%;
+  }
+}
+.tu{
+  height: {{result_rf}}%;
+  width: calc(100% / 8);
+  background: #FF8484;
+  position: absolute;
+  bottom: 0;
+  left: 14.2857142857%;
+  animation: up2 1s ease-in;
+}
+@keyframes up2{
+  0%{
+    height: 0;
+  }
+  100%{
+    height: 30%;
+  }
+}
+.w{
+  height: {{result_dt}}%;
+  width: calc(100% / 8);
+  background: #FF8484;
+  position: absolute;
+  bottom: 0;
+  left: 28.5714285714%;
+  animation: up3 1s ease-in;
+}
+@keyframes up3{
+  0%{
+    height: 0;
+  }
+  100%{
+    height: 20%;
+  }
+}
+.tr{
+  height: {{result_if}}%;
+  width: calc(100% / 8);
+  background: #FF8484;
+  position: absolute;
+  bottom: 0;
+  left: 42.8571428571%;
+  animation: up4 1s ease-in;
+}
+@keyframes up4{
+  0%{
+    height: 0;
+  }
+  100%{
+    height: 30%;
+  }
+}
+.f{
+  height: {{result_nb}}%;
+  width: calc(100% / 8);
+  background: #FF8484;
+  position: absolute;
+  bottom: 0;
+  left: 57.1428571429%;
+  animation: up5 1s ease-in;
+}
+@keyframes up5{
+  0%{
+    height: 0;
+  }
+  100%{
+    height: 50%;
+  }
+}
+.sa{
+  height: 40%;
+  width: calc(100% / 8);
+  background: #FF8484;
+  position: absolute;
+  bottom: 0;
+  left: 71.4285714286%;
+  animation: up6 1s ease-in;
+}
+@keyframes up6{
+  0%{
+    height: 0;
+  }
+  100%{
+    height: 40%;
+  }
+}
+.su{
+  height: 10%;
+  width: calc(100% / 8);
+  background: #FF8484;
+  position: absolute;
+  bottom: 0;
+  left: 85.7142857143%;
+  animation: up7 1s ease-in;
+}
+@keyframes up7{
+  0%{
+    height: 0;
+  }
+  100%{
+    height: 10%;
+  }
+}
+
+</style>
+<br>
+<h1>Graph highlighting valid and Invalid Transaction as per model's prediction</h1>
+<div class="box">
+  <div class="graph">
+    <div class="m">LogisticR</div>
+    <div class="tu">RandomF</div>
+    <div class="w">DecisionT</div>
+    <div class="tr">IsoForest</div>
+    <div class="f">NaiveB</div>
+
+  </div>
+  </div>
+
+<br>
+<br>
+
+<h2>Final Result</h2>
+
+<style>
+  .boxed {
+  border: 1px solid green ;
+}
+</style>
+<div class="boxed">
+  <h3>Model output count that says "Fraud is not detected" : {{count_z}}</h3><br>
+  <h3>Model output count that says "Fraud is detected" : {{count_o}}</h3>
+  <br>
+    <h3>As per the majority voting : {{majority}}</h3>
+</div>
+
+{% endblock %}

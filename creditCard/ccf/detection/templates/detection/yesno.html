@@ -1,0 +1,34 @@
+{% extends 'detection/base.html' %}
+
+{% block content %}
+<style>
+    body
+{
+  font-family: "Open Sans";
+}
+#wrapper
+{
+  border: 1px solid #888;
+  display: inline-block;
+  padding:20px;
+
+}
+</style>
+<div class="container" style="padding-top: 50px;">
+<div class="jumbotron text-center">
+      <div class="container">
+        <h1 class="jumbotron-heading">Do you want to initiate this transaction</h1>
+        <hr>
+        <h5><p>If you want Than click on yes button, your card will be activated else click on No button for cancelling it.</p> </h5>
+        <p>
+
+          <a class="btn btn-success btn-md" href="{% url 'permission_ok' %}" role="button">Yes</a>
+            <a class="btn btn-primary btn-md" href="{% url 'permission_no' %}" role="button">No</a>
+
+        </p>
+      </div>
+</div>
+</div>
+
+
+{% endblock %}

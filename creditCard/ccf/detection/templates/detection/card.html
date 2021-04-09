@@ -1,0 +1,37 @@
+{% extends 'detection/base.html' %}
+
+{% block title %} {{ block.super }}{% endblock title %}
+
+{% block content %}
+
+ {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>{{message}}</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                        </button>
+                </div>
+                {% endfor %}
+                  {% endif %}
+
+<div class="container" style="padding-top: 50px;">
+<div class="jumbotron text-center">
+      <div class="container">
+        <h1 class="jumbotron-heading">Credit Card fraud prevention System </h1>
+        <hr>
+        <h5><p> This is 2 layer authentication for preventing fraudulent Transaction. First user need to enter their credit card details, after that an OTP will
+        be sent in user email which is valid till 30 seconds.
+            At last Face recognition system will check for registered and real time user match.
+            If matched, user Good to go for transaction.If not matched than an email having real time user image will be sent to registered email.</p> </h5>
+        <p>
+
+          <a class="btn btn-success btn-md" href="{% url 'bank_account' %}" role="button">Create Account</a>
+            <a class="btn btn-primary btn-md" href="{% url 'credit_card_generator' %}" role="button">create credit card</a>
+                 <a class="btn btn-danger btn-md" href="{% url 'card_details' %}" role="button">Transaction</a>
+        </p>
+      </div>
+</div>
+</div>
+
+{% endblock content %}
