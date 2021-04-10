@@ -62,6 +62,14 @@ is working.
  4. First card in the website is having implementation of ML models for Credit card detection. (use the same credit card which you created)<br>
  5. Second card in the website is for credit card fraud prevention using OTP and Face recognition.<br>
  6. Third card is having Qr codes and basic blockchain stuffs for authentication and block creation (having location and timestamp)
+ 
+
+<br>
+
+### Demo video
+Link: <a href="https://drive.google.com/file/d/1RUf71hmnZj5xxJhgZtN0aIQ0WaPyxUUQ/view?usp=sharing">demo video of our project</a>
+
+<br>
 
 ## Snapshot
 
@@ -77,6 +85,8 @@ is working.
 <img src ="https://github.com/HarshitDolu/Rakathon-2021-Financial-Technology/blob/main/demo%20images/4.png" height="500"/><br>
 <img src ="https://github.com/HarshitDolu/Rakathon-2021-Financial-Technology/blob/main/demo%20images/5.png" height="500"/>
                                                                                                                         </p>
+<br>
+
 
 
 
