@@ -36,7 +36,7 @@ Can add activation and deactivation of Credit card on timely basis.
 ### Instructions for project set up
 
 Step 1: Grab a copy of the project. <br>
- git clone <br>
+ git clone https://github.com/HarshitDolu/Rakathon-2021-Financial-Technology.git <br>
 Step 2: Create a virtual environment and install dependencies. <br>
       mkvirtualenv creditcard
       venv\Scripts\activate
