@@ -63,7 +63,14 @@ is working.
  5. Second card in the website is for credit card fraud prevention using OTP and Face recognition.<br>
  6. Third card is having Qr codes and basic blockchain stuffs for authentication and block creation (having location and timestamp)
 
-
+## Demo images
+<p align="center">
+<img src ="https://github.com/HarshitDolu/Rakathon-2021-Financial-Technology/blob/main/demo%20images/1.png" height="500"/><br>
+<img src ="https://github.com/HarshitDolu/Rakathon-2021-Financial-Technology/blob/main/demo%20images/2.png" height="500"/><br>
+<img src ="https://github.com/HarshitDolu/Rakathon-2021-Financial-Technology/blob/main/demo%20images/3.png" height="500"/><br>
+<img src ="https://github.com/HarshitDolu/Rakathon-2021-Financial-Technology/blob/main/demo%20images/4.png" height="500"/><br>
+<img src ="https://github.com/HarshitDolu/Rakathon-2021-Financial-Technology/blob/main/demo%20images/5.png" height="500"/>
+                                                                                                                        </p>
 
 
 
